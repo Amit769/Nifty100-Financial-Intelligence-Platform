@@ -190,6 +190,23 @@ streamlit run app.py
 
 ---
 
+Sprint 1
+✔ Environment Setup
+✔ Excel Loader
+✔ Normalizer
+✔ Validator
+✔ SQLite Schema
+✔ ETL Pipeline
+✔ Audit Reports
+✔ Data Review
+✔ SQL Queries
+
+
+## Known Issue 
+Some source Excel workbooks contain inconsistent company identifiers.
+These are retained for audit purposes and documented through validation reports instead of being silently modified.
+
+
 ## 👨‍💻 Author
 
 **Amit Singh**
