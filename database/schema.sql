@@ -190,6 +190,22 @@ CREATE TABLE peer_groups (
     FOREIGN KEY (company_id) REFERENCES companies(id)
 );
 
+
+-- ==========================================================
+-- Peer Percentiles
+-- ==========================================================
+
+CREATE TABLE peer_percentiles (
+    id INTEGER PRIMARY KEY,
+    company_id TEXT NOT NULL,
+    peer_group_name TEXT NOT NULL,
+    metric TEXT NOT NULL,
+    value REAL,
+    percentile_rank REAL,
+    year TEXT,
+    FOREIGN KEY (company_id) REFERENCES companies(id)
+);
+
 -- ==========================================================
 -- Pros & Cons
 -- ==========================================================
@@ -280,3 +296,9 @@ ON stock_prices(company_id);
 
 CREATE INDEX idx_documents_company
 ON documents(company_id);
+
+CREATE INDEX idx_peer_percentiles_company
+ON peer_percentiles(company_id);
+
+CREATE INDEX idx_peer_percentiles_group
+ON peer_percentiles(peer_group_name);
